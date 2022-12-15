@@ -9,6 +9,10 @@ class Attribute extends Model
 {
     use HasFactory;
     protected $table = 'laravel_attributes_table'; 
+
+    public function slug(){
+        return $this->morphTo();
+    }
 }
 
 ?>
