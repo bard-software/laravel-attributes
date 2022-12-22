@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId("attribute_id")->references('id')->on('attributes');
             $table->foreignId("entity_id");
-            $table->string("type");
+            $table->string("entity_type");
             $table->timestamps();
         });
     }
