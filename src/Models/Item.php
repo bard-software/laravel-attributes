@@ -10,7 +10,7 @@ class Attribute extends Model
     use HasFactory;
 
     public function attributes(){
-        return $this->morphtoMany(Attribute::class,'slug');
+        return $this->morphtoMany(AttributeEntity::class,'attribute_id');
     }
 }
 

@@ -10,8 +10,8 @@ class Attribute extends Model
     use HasFactory;
     protected $table = 'laravel_attributes_table'; 
 
-    public function slug(){
-        return $this->morphTo();
+    public function entities(){
+        return $this->morphtoMany(AttributeEntity::class,'entity_id');
     }
 }
 

@@ -8,10 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Attribute extends Model
 {
     use HasFactory;
-
-    public function attributes(){
-        return $this->morphtoMany(AttributeEntity::class,'attribute_id');
-    }
+    protected $table = 'laravel_attribute_entities_table'; 
 }
 
 ?>
