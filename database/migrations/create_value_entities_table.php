@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('laravel_value_entities_table', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("attribute_id")->references('id')->on('attributes');
+            $table->foreignId("value_id")->references('id')->on('attributes');
             $table->foreignId("entity_id");
             $table->string("entity_type");
             $table->timestamps();
