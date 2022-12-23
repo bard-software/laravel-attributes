@@ -8,7 +8,22 @@ use Illuminate\Database\Eloquent\Model;
 class ValueEntity extends Model
 {
     use HasFactory;
-    protected $table = 'laravel_attribute_values_table'; 
+    protected $table = 'laravel_value_entitites_table'; 
+    private $item_model;
+    private $category_model;
+
+    public function __construct(){
+        $item_model = config('attributes.entities.item');
+        $category_model = config('attributes.entities.category');
+    }
+    public function items(){
+        return $this->morphedByMany($item_model,'entity_id');  
+    }
+
+    public function categories(){
+        return $this->morphedByMany($item_category,'entity_id');  
+    }
+
 }
 
 ?>

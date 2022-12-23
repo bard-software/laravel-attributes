@@ -36,6 +36,7 @@
     "autoload": {
         "psr-4": {
             "BardSoftware\\LaravelAttributes\\": "src",
+            
             "BardSoftware\\LaravelAttributes\\Database\\Factories\\": "database/factories"
         }
     },
