@@ -22,4 +22,8 @@ class LaravelAttributesServiceProvider extends PackageServiceProvider
             ->hasMigration('create_attributes_table')
             ->hasCommand(LaravelAttributesCommand::class);
     }
+
+    public function boot(){
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+    }
 }
