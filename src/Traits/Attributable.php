@@ -1,5 +1,5 @@
 <?php 
-namespace BardSoftware\LaravelAttributes;
+namespace BardSoftware\LaravelAttributes\Traits;
 
 trait Attributable{
     
