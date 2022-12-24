@@ -24,6 +24,18 @@ class LaravelAttributesServiceProvider extends PackageServiceProvider
     }
 
     public function boot(){
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        if($this->app->runningInConsole()){
+            $this->publishes(
+                [
+                    __DIR__.'/../database/migrations/create_attribute_entities_table' => database_path('migrations/'.date('Y_m_d_his',time()).'_create_attribute_entities_table.php'),
+                    __DIR__.'/../database/migrations/create_attribute_values_table' => database_path('migrations/'.date('Y_m_d_his',time()).'_create_attribute_values_table.php'),
+                    __DIR__.'/../database/migrations/create_attributes_table' => database_path('migrations/'.date('Y_m_d_his',time()).'_create_attributes_table.php'),
+                    __DIR__.'/../database/migrations/create_value_entities_table' => database_path('migrations/'.date('Y_m_d_his',time()).'_create_value_entities_table.php'),
+
+
+
+                ]
+            );
+        }
     }
 }
