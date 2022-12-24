@@ -19,7 +19,7 @@ class LaravelAttributesServiceProvider extends PackageServiceProvider
             ->name('laravel-attributes')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_laravel-attributes_table')
+            ->hasMigration('create_attributes_table')
             ->hasCommand(LaravelAttributesCommand::class);
     }
 
