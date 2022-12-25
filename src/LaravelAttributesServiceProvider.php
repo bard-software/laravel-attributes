@@ -3,11 +3,12 @@
 namespace BardSoftware\LaravelAttributes;
 
 use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Illuminate\Support\ServiceProvider;
 use BardSoftware\LaravelAttributes\Commands\LaravelAttributesCommand;
 
-class LaravelAttributesServiceProvider extends PackageServiceProvider
+class LaravelAttributesServiceProvider extends ServiceProvider
 {
+
     public function configurePackage(Package $package): void
     {
         /*
@@ -36,6 +37,7 @@ class LaravelAttributesServiceProvider extends PackageServiceProvider
 
                 ]
             );
+
         }
     }
 }
