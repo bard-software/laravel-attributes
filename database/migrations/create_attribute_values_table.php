@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('laravel_attribute_values_table', function (Blueprint $table) {
             $table->id();
             $table->string("title");
-            $table->foreignId("attribute_id");
+            $table->foreignId("attribute_id")->references("id")->on("laravel_attributes_table");
             $table->json("extra");
             $table->timestamps();
         });

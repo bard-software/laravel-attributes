@@ -8,10 +8,10 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('laravel_value_entities_table', function (Blueprint $table) {
+        Schema::create('laravel_attribute_entities_table', function (Blueprint $table) {
             $table->id();
             $table->foreignId("attribute_id")->references('id')->on('attributes');
-            $table->foreignId("entity_id");
+            $table->foreignId("entity_id")->references("id")->on("laravel_value_entities_table");
             $table->string("entity_type");
             $table->timestamps();
         });
@@ -19,7 +19,7 @@ return new class extends Migration
     
     public function down()
     {
-        Schema::dropIfExists('laravel_attribute_values_table');
+        Schema::dropIfExists('laravel_attribute_entities_table');
     }
 
 };
